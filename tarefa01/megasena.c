@@ -61,7 +61,8 @@ void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int 
 }
 
 int main(){
-    int m, i = 0;
+    int m;
+    int i = 0;
     double n;
     int sorteados[6], corretos[MAX_PESSOAS];
     double premios[MAX_PESSOAS];
