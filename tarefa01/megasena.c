@@ -47,7 +47,7 @@ void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int 
                     aux++;
                 }
             }
-            printf("%0.2lf\n", (n * (62.0/100))/aux);
+            printf("%.2lf\n", (n * (62.0/100))/aux);
         }
         else if(corretos[i] == 5 || corretos[i] == 4){
             for(j = 0; j < m; j++){
@@ -55,7 +55,7 @@ void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int 
                     aux++;
                 }
             }
-            printf("%0.2lf\n", (n * (19.0/100))/aux);
+            printf("%.2lf\n", (n * (19.0/100))/aux);
         }
     }
 }
@@ -73,5 +73,6 @@ int main(){
     }
     separa_apostas(apostas, corretos, m, sorteados);
     define_premios(corretos, premios, m, n);
+    return 0;
 }
 
