@@ -3,7 +3,7 @@
 #define MAX_APOSTAS 15
 #define MAX_PESSOAS 1000
 void le_matriz(int apostas[][COLUNAS], int m){
-    int i, j;
+    int i = 0, j = 0;
     for(i = 0; i < m; i++){
         for(j = 0; j < COLUNAS; j++){
             scanf("%d", &apostas[i][j]);
@@ -15,7 +15,7 @@ void le_matriz(int apostas[][COLUNAS], int m){
 }
 
 void limpar_matriz(int matriz[][6], int m) {
-    int i, j;
+    int i = 0, j = 0;
     for (i = 0; i < m; i++) {
         for (j = 0; j < 15; j++)  {
             matriz[i][j] = 0;
@@ -24,7 +24,9 @@ void limpar_matriz(int matriz[][6], int m) {
 }
 
 void separa_apostas(int apostas[][COLUNAS], int corretos[MAX_PESSOAS], int m, int sorteados[6]){
-    int i, j, k, l = 0, certos = 0;
+    int i = 0, j = 0, k = 0;
+    int l = 0;
+    int certos = 0;
     for (i = 0; i < m; i++){
         certos = 0;
         for (j = 0; j < 6; j++){
@@ -40,7 +42,7 @@ void separa_apostas(int apostas[][COLUNAS], int corretos[MAX_PESSOAS], int m, in
 }
 
 void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int m, double n){
-    int i, j;
+    int i = 0, j = 0;
     int aux = 0;
     for (i = 0; i < m; i++){
         aux = 0;
@@ -67,7 +69,7 @@ void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int 
 }
 
 int main(){
-    int m, i;
+    int m, i = 0;
     double n;
     int sorteados[6], corretos[MAX_PESSOAS];
     double premios[MAX_PESSOAS];
