@@ -39,7 +39,7 @@ void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int 
     for (i = 0; i < m; i++){
         aux = 0;
         if(corretos[i] >= 0 && corretos[i] < 4){
-            printf("%.2f\n", 0.00);
+            printf("0.00\n");
         }
         else if(corretos[i] == 6){
             for(j = 0; j < m; j++){
@@ -64,7 +64,7 @@ int main(){
     int m;
     int i = 0;
     double n;
-    int sorteados[6], corretos[MAX_PESSOAS];
+    int sorteados[5], corretos[MAX_PESSOAS];
     double premios[MAX_PESSOAS];
     scanf("%d %lf", &m, &n);
     int apostas[MAX_PESSOAS][COLUNAS];
