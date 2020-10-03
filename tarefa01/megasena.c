@@ -2,6 +2,7 @@
 #define COLUNAS 60
 #define MAX_APOSTAS 15
 #define MAX_PESSOAS 1000
+
 void le_matriz(int apostas[][COLUNAS], int m){
     int i = 0, j = 0;
     for(i = 0; i < m; i++){
@@ -10,15 +11,6 @@ void le_matriz(int apostas[][COLUNAS], int m){
             if(apostas[i][j] == 1){
                 apostas[i][j] = j + 1;
             }
-        }
-    }
-}
-
-void limpar_matriz(int matriz[][6], int m) {
-    int i = 0, j = 0;
-    for (i = 0; i < m; i++) {
-        for (j = 0; j < 15; j++)  {
-            matriz[i][j] = 0;
         }
     }
 }
@@ -81,6 +73,5 @@ int main(){
     }
     separa_apostas(apostas, corretos, m, sorteados);
     define_premios(corretos, premios, m, n);
-    return 0;
 }
 
