@@ -64,7 +64,7 @@ int main(){
     int m;
     int i = 0;
     double n;
-    int sorteados[5], corretos[MAX_PESSOAS];
+    int sorteados[6], corretos[MAX_PESSOAS];
     double premios[MAX_PESSOAS];
     scanf("%d %lf", &m, &n);
     int apostas[MAX_PESSOAS][COLUNAS];
