@@ -64,6 +64,9 @@ int main(){
     double n;
     int sorteados[6];
     int corretos[MAX_PESSOAS];
+    for(i = 0; i < 1000; i++){
+        corretos[i] = 0;
+    }
     scanf("%d %lf", &m, &n);
     int apostas[MAX_PESSOAS][COLUNAS];
     le_matriz(apostas, m);
