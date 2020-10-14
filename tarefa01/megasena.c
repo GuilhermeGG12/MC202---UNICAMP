@@ -16,15 +16,13 @@ void le_matriz(int apostas[][COLUNAS], int m){
 }
 
 void separa_apostas(int apostas[][COLUNAS], int corretos[MAX_PESSOAS], int m, int sorteados[6]){
-    int i = 0, j = 0, k = 0;
-    int l = 0;
-    int certos = 0;
+    int i = 0, j = 0, k = 0, l = 0, certos = 0;
     for (i = 0; i < m; i++){
         certos = 0;
         for (j = 0; j < 6; j++){
             for (k = 0; k < 60; k++){
                 if(sorteados[j] == apostas[i][k]){
-                    certos += 1;
+                    certos++;
                     corretos[l] = certos;
                 }
             }
@@ -33,7 +31,7 @@ void separa_apostas(int apostas[][COLUNAS], int corretos[MAX_PESSOAS], int m, in
     }
 }
 
-void define_premios(int corretos[MAX_PESSOAS], double premios[MAX_PESSOAS], int m, double n){
+void define_premios(int corretos[MAX_PESSOAS], int m, double n){
     int i = 0, j = 0;
     int aux = 0;
     for (i = 0; i < m; i++){
@@ -64,8 +62,8 @@ int main(){
     int m;
     int i = 0;
     double n;
-    int sorteados[6], corretos[MAX_PESSOAS];
-    double premios[MAX_PESSOAS];
+    int sorteados[6];
+    int corretos[MAX_PESSOAS];
     scanf("%d %lf", &m, &n);
     int apostas[MAX_PESSOAS][COLUNAS];
     le_matriz(apostas, m);
@@ -73,7 +71,7 @@ int main(){
         scanf("%d", &sorteados[i]);
     }
     separa_apostas(apostas, corretos, m, sorteados);
-    define_premios(corretos, premios, m, n);
+    define_premios(corretos, m, n);
     return 0;
 }
 
