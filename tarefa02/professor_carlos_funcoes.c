@@ -263,9 +263,8 @@ int conta_substrings(Turma t[], int qtd_turmas, char *padrao){
 }
 
 int add_aluno(Turma t[], Aluno A, int j){
-    int h;
+    int h = 0;
     h = t[j].qtd;  
-    // Como A.nome é char fazer um for que passa alterando cada caracter
     for(int i = 0; i < 15; i++){
         if(A.nome[i] == 0 && A.sobrenome[i] == 0){
             break;

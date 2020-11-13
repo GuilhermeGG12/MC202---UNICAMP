@@ -7,8 +7,33 @@ int main(){
     int num_turma;
     char substring[15];
     Aluno a;
+    for(int x = 0; x < 50; x++){
+        a.nome[x] = 0;
+        a.sobrenome[x]= 0;
+    }
+    a.nascimento.dia = 0;
+    a.nascimento.mes = 0;
+    a.nascimento.ano = 0;
+
     scanf("%d %d", &n, &k);
     Turma turmas[50];
+    for(int x = 0; x < 50; x++){
+        for(int y = 0; y < 50; y++){
+            for(int z = 0; z < 15; z++){
+                turmas[x].alunos[y].nome[z] = 0;
+                turmas[x].alunos[y].sobrenome[z] = 0;
+            }
+        }
+    }
+    for(int x = 0; x < 50; x++){
+        turmas[x].qtd = 0;
+        for(int y = 0; y < 50; y++){
+            turmas[x].alunos[y].nascimento.dia = 0;
+            turmas[x].alunos[y].nascimento.mes = 0;
+            turmas[x].alunos[y].nascimento.ano = 0;
+        }
+    }
+
     for(int i = 0; i < n; i++){
         scanf("%d", &m);
         for(int j = 0; j < m; j++){
