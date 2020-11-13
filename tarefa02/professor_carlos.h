@@ -44,3 +44,4 @@ int add_aluno(Turma t[], Aluno A, int j);
 int remove_aluno(Turma t[], int j);
 
 #endif
+
