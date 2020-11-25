@@ -78,7 +78,7 @@ void define_categorias(Categoria **categorias, int n, Termo **termos) {
 }
 
 void imprime_categorias(Categoria **categorias) {
-    printf("RESULTADO:\n");
+    printf("\nRESULTADO:\n");
     printf("Bot (%d): ", categorias[0]->componentes[0]->qtd);
     for(int i = 0; i < categorias[0]->componentes[0]->qtd; i++){
         printf("%s ", categorias[0]->componentes[i]->nome);
