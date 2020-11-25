@@ -47,7 +47,12 @@ void separa_dados(Termo**termos, int m, int n) {
 void define_categorias(Categoria **categorias, int n, Termo **termos) {
     int aux_a = 0, aux_b = 0, aux_c = 0, aux_d = 0, aux_e = 0;
     int i;
-    
+    categorias[0]->componentes[0]->qtd = 0;
+    categorias[1]->componentes[0]->qtd = 0;
+    categorias[2]->componentes[0]->qtd = 0;
+    categorias[3]->componentes[0]->qtd = 0;
+    categorias[4]->componentes[0]->qtd = 0;
+
     for(i = 0; i < n; i++){
         if(termos[i]->media >= 60 && termos[i]->desvio > 15){
             strcpy(categorias[0]->componentes[aux_a]->nome, termos[i]->nome);
