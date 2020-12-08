@@ -42,9 +42,6 @@ int checa_letras(char **matriz, char palavra[MAX], int aux, int i, int j, int l,
 }
 
 int letra_valida(char **matriz, char palavra[MAX], int l, int c) {
-    if(palavra[0] == '\0'){
-        return 0;
-    }
 
     for(int i = 0; i < l; i++){
         for(int j = 0; j < c; j++){
