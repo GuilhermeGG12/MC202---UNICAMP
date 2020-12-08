@@ -62,6 +62,7 @@ int main() {
     matriz = cria_matriz(n, m);
     for(i = 0; i < q; i++){
         scanf("%s", palavra);
+    
         if(letra_valida(matriz, palavra, n, m)){
             printf("sim\n");
         }
