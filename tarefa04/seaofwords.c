@@ -21,14 +21,14 @@ char ** cria_matriz(int l, int c) {
 
 int checa_letras(char **matriz, char palavra[MAX], int aux, int i, int j, int l, int c) {
     int eh_valida;
-    if(aux == strlen(palavra) - 1){
-        return 1;
-    }
-    else if(i < 0 || i >= l || j < 0 || j >= c){
+    if(i < 0 || i >= l || j < 0 || j >= c){
         return 0;
     }
     else if(matriz[i][j] != palavra[aux]){
         return 0;
+    }
+    else if(aux == strlen(palavra) - 1){
+        return 1;
     }
     matriz[i][j] = '.';
 
