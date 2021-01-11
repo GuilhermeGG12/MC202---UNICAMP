@@ -3,24 +3,16 @@
 #include "calculadora.h"
 
 p_no criar_lista() {
+
+    // função que cria uma lista ligada
+
     return NULL;
 }
 
-p_no le_lista(p_no lista) {
-    char algarismo;
-    int i;
-    for(i = 0; i < 26; i++){ //Ajeitar leitura dos numeros transformar em string é bom!
-        scanf("%c", &algarismo);
-        if(algarismo == ' ')
-            break;
-        else{
-            lista = adicionar_algarismo(lista, (algarismo - '0'));
-        }
-    }
-    return lista;
-}
-
 p_no adicionar_algarismo(p_no num, int algarismo) {
+
+    // função que adiciona um novo nó e seus dados à lista 
+
     p_no novo;
     novo = malloc(sizeof(No));
     if(novo == NULL){
@@ -33,6 +25,9 @@ p_no adicionar_algarismo(p_no num, int algarismo) {
 }
 
 p_no inverter_lista(p_no lista) {
+
+    // função que inverte uma lista ligada
+
     p_no atual, ant, invertida = NULL;
     atual = lista;
     while(atual != NULL){
@@ -45,7 +40,10 @@ p_no inverter_lista(p_no lista) {
 }
 
 void imprime_lista(p_no lista) {
-    if(lista != NULL && lista->algarismo == '\0'){
+
+    // função que imprime os elementos de uma lista
+
+    if(lista != NULL && lista->algarismo == '\0'){ // Retiramos os zeros à esquerda 
         while(lista->prox != NULL && lista->algarismo == '\0'){
             lista = lista->prox;
         }
@@ -63,6 +61,9 @@ void imprime_lista(p_no lista) {
 }
 
 void destruir_lista(p_no lista) {
+
+    // função que libera cada nó da lista
+
     if(lista != NULL) {
         destruir_lista(lista->prox);
         free(lista);
@@ -70,6 +71,9 @@ void destruir_lista(p_no lista) {
 }
 
 int verifica_tamanho(p_no numero) {
+
+    // função que retorna como inteiro o tamanho de uma lista ligada
+
     int tam = 0;
     while(numero != NULL){
         numero = numero->prox;
@@ -79,6 +83,9 @@ int verifica_tamanho(p_no numero) {
 }
 
 p_no cria_lista_vazia(int tam) {
+
+    // função que cria uma lista de tamanho definido na qual os dados de cada nó é 0
+
     p_no novo = NULL;
     while(tam--)
         novo = adicionar_algarismo(novo, 0);
@@ -86,6 +93,9 @@ p_no cria_lista_vazia(int tam) {
 }
 
 p_no adiciona_zeros(p_no numero, int dif) {
+
+    // função que adiciona zeros à esquerda quando necessário
+
     p_no novo = criar_lista();
     p_no aux = NULL;
     novo = adicionar_algarismo(novo, 0);
@@ -109,6 +119,9 @@ p_no adiciona_zeros(p_no numero, int dif) {
 }
 
 p_no somar_listas(p_no primeiro, p_no segundo) {
+
+    // função que soma os valores de duas listas retornando uma nova lista como resultado
+
     p_no res = NULL;
     p_no aux, ant = NULL;
     int soma = 0, carry = 0;
@@ -160,7 +173,10 @@ p_no somar_listas(p_no primeiro, p_no segundo) {
     return res;
 }
 
-p_no subtrai_listas(p_no primeiro, p_no segundo) { //Finalizar essa e func que tira zero na esquerda
+p_no subtrai_listas(p_no primeiro, p_no segundo) {
+
+    // função que subtrai os valores de duas listas retornando uma nova lista como resultado
+
     p_no res = NULL;
     p_no aux, ant = NULL;
     int subt, carry = 0;    
@@ -202,6 +218,9 @@ p_no subtrai_listas(p_no primeiro, p_no segundo) { //Finalizar essa e func que t
 }
 
 p_no arranja_listas(p_no primeiro, p_no segundo) {
+
+    // função que arranja as listas para facilitar na subtração
+
     int len1 = verifica_tamanho(primeiro);
     int len2 = verifica_tamanho(segundo);
     p_no maior = NULL;
@@ -244,6 +263,8 @@ p_no arranja_listas(p_no primeiro, p_no segundo) {
 }
 
 p_no multiplica_listas(p_no primeiro, p_no segundo) {
+
+    // função que multiplica os valores de duas listas retornando uma nova lista como resultado
     
     int len1 = verifica_tamanho(primeiro);
     int len2 = verifica_tamanho(segundo);
@@ -294,7 +315,7 @@ int main() {
     scanf("%d ", &n);
     while(n > 0){
         scanf(" %c ", &op);
-        for(i = 0; i < 26; i++){ //Ajeitar leitura dos numeros transformar em string é bom!
+        for(i = 0; i < 26; i++){
             scanf("%c", &algarismo);
             if(algarismo == ' ')
                 break;
@@ -332,6 +353,7 @@ int main() {
                 primeiro = criar_lista();
                 segundo = criar_lista();
                 break;
+
             case '*':
                 resultado = multiplica_listas(primeiro, segundo); 
                 resultado = inverter_lista(resultado);
