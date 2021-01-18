@@ -17,6 +17,10 @@ p_dic cria() {
 
     p_dic d = malloc(sizeof(Dicionario));
     d->tabela = malloc(M * sizeof(Item));
+    if(d == NULL){
+        printf("Erro de memória!");
+        exit(1);
+    }
     for (int i = 0; i < M; i++)
         d->tabela[i].vazio = 1;
     return d;
@@ -75,6 +79,10 @@ int remove_letra(p_dic d, char *palavra, int index) {
     // função que remove uma letra de cada posição da palavra
 
     char *nova_palavra = malloc(26 * sizeof(char));
+    if(nova_palavra == NULL){
+        printf("Erro de memória!");
+        exit(1);
+    }
     strncpy(nova_palavra, palavra, index);
     nova_palavra[index] = '\0';
     if(index != strlen(palavra) - 1)
@@ -92,6 +100,10 @@ int muda_letra(p_dic d, char *palavra, char *letra, int index) {
     // função que muda uma letra de cada posição da palavra por outra do alfabeto
 
     char *nova_palavra = malloc(26 * sizeof(char));
+    if(nova_palavra == NULL){
+        printf("Erro de memória!");
+        exit(1);
+    }
     strncpy(nova_palavra, palavra, index);
     nova_palavra[index] = '\0';
     strcat(nova_palavra, letra);

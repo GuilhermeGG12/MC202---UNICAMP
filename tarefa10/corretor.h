@@ -2,6 +2,7 @@
 #define CORRETOR_H
 #define MAX 101
 #define M 1024
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
