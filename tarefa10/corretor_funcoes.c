@@ -108,7 +108,7 @@ int checa_palavras(p_dic d, char *palavra) {
 
     /*
     função que realiza a checagem do grau de correção de uma palavra verificando
-    cada um dos casos possíveis, retornando seu grau de correção
+    cada um dos casos possíveis, retornando seu grau como int
     */
 
     int i, j;
