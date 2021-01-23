@@ -5,8 +5,10 @@ LDFLAGS = -lm
 
 all: listas_legais
 
-listas_legais: *.c
-	gcc $(CFLAGS) *.c -o listas_legais $(LDFLAGS)
+listas_legais: listas_legais_main.c
+	gcc $(CFLAGS) -c listas_legais_funcoes.c $(LDFLAGS)
+	gcc $(CFLAGS) -c listas_legais_main.c $(LDFLAGS)
+	gcc $(CFLAGS) -o listas_legais listas_legais_main.o listas_legais_funcoes.o $(LDFLAGS)
 
 clean:
 	rm -f listas_legais
